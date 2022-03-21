@@ -23,9 +23,9 @@ function showAge(){
 showAge();
 
 //스코프
-const age = 30;
+const age2 = 30;
 
-if(age>19){
+if(age2>19){
     var txt = "성인" 
 }
 
@@ -76,15 +76,15 @@ item3.showPrice();
 
 //Object Method , computed property
 
-let a = "age"
+let aa = "age"
 
 const user = {
     name : "Mike",
-    [a] : 30 // [a] <- 변수 a에 할당된 값  : computed property (계산된 프로퍼티)
+    [aa] : 30 // [a] <- 변수 a에 할당된 값  : computed property (계산된 프로퍼티)
 }
 
 
-const user = {
+const user_1 = {
     [1+4] : 5,
     ["안녕"+"하세요"] : "Hello"
 }
@@ -93,57 +93,57 @@ const user = {
 
 //Object.assign():객체 복제
 
-const user = {
+const userr = {
     name : "Mike" ,
     age : 30
 };
 
-const cloneUser = user; //x 클론 바꾸면 원래것도 바뀜
+const cloneUser = userr; //x 클론 바꾸면 원래것도 바뀜
 
-const newUser = Object.assign({}, user); // {} + {name : "Mike" , age:30} =
+const newUser = Object.assign({}, userr); // {} + {name : "Mike" , age:30} =
 newUser.name = "Tom";
-console.log(user.name); //"mike"
-newUser != user // 클론 이름 바꿔도 원래 유저는 안바뀜
+console.log(userr.name); //"mike"
+newUser != userr // 클론 이름 바꿔도 원래 유저는 안바뀜
 
 //Object.keys():키 배열 반환
 
-const user = {
+const user4 = {
     name : "Mike",
     age:30,
     gender : "male",
 }
 
-Object.keys(user); //["name", "age", "Gender"] - 배열로 반환
+Object.keys(user4); //["name", "age", "Gender"] - 배열로 반환
 
 //Object.values() : 값 배열 반환
 
-const user = {
+const userrr = {
     name : "Mike" ,
     age : 30,
     gender:"male",
 }
 
-Object.values(user); // ["Mike",30,"male"] - 값들을 배열로 반환 
+Object.values(userrr); // ["Mike",30,"male"] - 값들을 배열로 반환 
 
 //Object.entries():키/값 배열 반환
-const user = {
+const useer = {
     name : "Mike",
     age:30,
     gender : "male"
 }
 
-Object.entries(user); // ["name","Mike",],["age",30,],["gender","male"] 키와 값 배열로 묶어서 반환
+Object.entries(useer); // ["name","Mike",],["age",30,],["gender","male"] 키와 값 배열로 묶어서 반환
 
 //Object.fromEntries() : 키/값 배열을 객체로
 
-const arr = 
+const arry = 
 [
     ["name","Mike"],
     ["age",30],
     ["gender","male"]
 ];
 
-Object.fromEntries(arr);
+Object.fromEntries(arry);
 
 /* 
 {
@@ -159,13 +159,13 @@ Object.fromEntries(arr);
  let n = "name";
  let a = "age";
 
- const user = {
+ const user_a = {
      [n] : "Mike",
      [a] : 30,
      [1+4] : 5,
  };
 
- console.log(user); // {5:5, nae:"Mike",age:30}
+ console.log(user_a); // {5:5, nae:"Mike",age:30}
 
  
  function makeObj(key, val) {
@@ -180,14 +180,14 @@ Object.fromEntries(arr);
  
  //실습2
 
- const user = {
+ const user_b = {
      name:"Mike",
      age : 30,
  };
 
- const uer2 = Object.assign({},user);
+ const uer_c = Object.assign({},user_b);
 
-// const user2 = user ; 이렇게 복사하면 원래 유저도 이름 바껴서 옳지않음
+// const user_c = user_b ; 이렇게 복사하면 원래 유저도 이름 바껴서 옳지않음
 //const result = Object.keys(user)
 //const result = Object.values(user)
 //const result = Object.entries(user)
