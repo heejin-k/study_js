@@ -170,4 +170,3 @@ console.log(bresult);
 //Array.isArray() 배열인지 아닌지 
 
 console.log(Array.isArray(user));
-
