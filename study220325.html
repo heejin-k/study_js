@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="alert('click')">클릭1</button>
+    <button onclick="sayhello()">클릭2</button>
+    <button id="btn">클릭3</button>
+    <button id="btn2">클릭4</button>
+    <input id="txt" type="text"/>
+    
+    <div id = "box" 
+        style="
+        position:relative;
+        width:100px; 
+        height:100px; 
+        border:2px solid red;
+        "
+    >
+    </div>
+
+    <div
+        id="circle"
+        style="
+            position:absolute;
+            top: 34px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+         "
+    ></div>
+
+    <script>
+        function sayhello() {
+            alert("hello");
+        }
+
+        const el = document.getElementById("btn");
+        el.onclick=sayhello;
+
+        const el2 = document.getElementById("btn2");
+       // el2.addEventListener("click",sayhello);//특정이벤트 발생시 핸들러 실행
+       el2.addEventListener("click",()=> {
+           alert("hi");
+       });
+       //removeEventlister = 이미 할당된 핸들러 삭제
+
+       const input = document.getElementById("txt");
+       input.addEventListener("keyup",(event)=>{
+           console.log(event.key);
+       });
+       //focus, blur
+       const input2 = document.getElementById("txt");
+       input.addEventListener("focus",()=>{
+           input.style.backgroundColor = "rgba(255,0,0,0.2)";
+       });
+       input.addEventListener('blur',()=>{
+           input.style.bakcgroundColor = null;
+       });
+
+       const box = document.getElementById("box");
+       const circle = document.getElementById("circle");
+       box.addEventListener("mousemove",event =>{
+           circle.style.top=`${event.clientY}px`;
+           circle.style.left=`${event.clientX}px`;
+       }); //마우스 따라서 circle의 x,y값이 정해져 움직이는 코드
+
+       //window resize
+       window.addEventListener("resize",()=>{
+           document.body.innerText = `현재 창 크기는 ${window.innerWidth} x ${window.innerHeight}`;
+       });
+    </script>
+</body>
+</html>
