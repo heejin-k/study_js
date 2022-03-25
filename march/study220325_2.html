@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <ul id ="list">
+            <li id ="red" class="on">Red</li>
+            <li id="blue"> blue</li>
+            <li id="green"> green</li>
+            <li id="pink"> pink</li>
+        </ul>
+    </div>
+    
+    <script>
+ 
+        const box = document.getElementById("box");
+        const list = document.getElementById("list");
+        const color = document.getElementById("color");
+
+        document.body.addEventListener("click",()=>{
+            console.log("1. body");
+        });
+        box.addEventListener("click",()=>{
+            console.log("2. div");
+        });
+        list.addEventListener("click",()=>{
+            console.log("3. ul");
+        });
+        color.addEventListener("click",()=>{
+            console.log("4. list");
+        }); //이벤트 버블링 
+//-------------------------------------//
+        //const list = document.getElementById("List");
+        const colors = list.children;
+
+        function clickHandler(event) {
+            for (c of colors) {
+                c.classList.remove("on");
+            }
+            event.target.classList.add("on");
+        }
+/*
+        document.getElementById('red').addEventListener("click",clickHandler);
+        document.getElementById('blue').addEventListener("click",clickHandler);
+        document.getElementById('green').addEventListener("click",clickHandler);
+        document.getElementById('pink').addEventListener("click",clickHandler);
+        */
+
+        document.getElementById('list').addEventListener("click",clickHandler); 
+        // 코드가 길어지면 이렇게 부모리스트에 넣는것이 효율적 : 버블링 때문에 가능
+        //https://youtu.be/beLituqpwl8
+    </script>
+</body>
+</html>
