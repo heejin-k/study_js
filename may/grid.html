@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃 1</title>
+    <style>
+        .container {
+            width: 500px;
+            display: grid;
+
+            grid-template-areas:
+                "header header header"
+                "sidebar content1 content2"
+                "sidebar footer footer";
+
+            grid-template-rows: 40px 1fr 40px;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* header, footer 고정값 40px 나머지는 내용의 양에 따라서 늘어나도록 */
+
+            grid-gap: 10px;
+        }
+
+        .container .header {
+            grid-area: header;
+            background: #F9B09E;
+            color: white;
+        }
+
+        .container .side {
+            grid-area: sidebar;
+        }
+
+        .container .cont1 {
+            grid-area: content1;
+        }
+
+        .container .cont2 {
+            grid-area: content2;
+
+        }
+
+        .container .footer {
+            grid-area: footer;
+            background: #F9B09E;
+            color: white;
+        }
+
+        .item {
+            padding: 10px;
+            background: #FFF0E6;
+            border-radius: 20px;
+            color: #7B7B7B;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item header">Header</div>
+        <div class="item side">Sidebar</div>
+        <div class="item cont1">Content</div>
+        <div class="item cont2">Content</div>
+        <div class="item footer">Footer</div>
+    </div>
+
+
+    <!-- <div class="container2">
+        <div class="item2 header">Header</div>
+        <div class="item2 l-side">Left Sidebar</div>
+        <div class="item2 main-cont">Main Content</div>
+        <div class="item2 r-side">Right Sider</div>
+        <div class="item2 footer">Footer</div>
+    </div> -->
+</body>
+
+</html>

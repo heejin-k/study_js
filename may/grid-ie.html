@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃 1</title>
+    <style>
+        /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+        /* ms붙은건 ie에서만 지원가능해서 중복으로 작성해주는 듯  */
+        .container {
+            width: 500px;
+            display: -ms-grid;
+            display: grid;
+
+            grid-template-areas:
+                "header header header"
+                "l-side main r-side"
+                "footer footer footer";
+
+            -ms-grid-rows: 40px 10px 1fr 10px 40px;
+            grid-template-rows: 40px 1fr 40px;
+            -ms-grid-columns: 1fr 10px 2fr 10px 1fr;
+            grid-template-columns: 1fr 2fr 1fr;
+            /* header, footer 고정값 40px 나머지는 내용의 양에 따라서 늘어나도록 사이드바와 메인은 1:2:1*/
+
+            grid-gap: 10px;
+        }
+
+        .container .header {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 5;
+            grid-area: header;
+            background: #F9B09E;
+            color: white;
+        }
+
+        .container .l-side {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+            grid-area: l-side;
+        }
+
+        .container .main-cont {
+            -ms-grid-row: 3;
+            -ms-grid-column: 3;
+            grid-area: main;
+        }
+
+        .container .r-side {
+            -ms-grid-row: 3;
+            -ms-grid-column: 5;
+            grid-area: r-side;
+
+        }
+
+        .container .footer {
+            -ms-grid-row: 5;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 5;
+            grid-area: footer;
+            background: #F9B09E;
+            color: white;
+        }
+
+        .item2 {
+            padding: 10px;
+            background: #FFF0E6;
+            border-radius: 20px;
+            color: #7B7B7B;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item2 header">Header</div>
+        <div class="item2 l-side">Left Sidebar</div>
+        <div class="item2 main-cont">Main Content</div>
+        <div class="item2 r-side">Right Sider</div>
+        <div class="item2 footer">Footer</div>
+    </div>
+</body>
+
+</html>
