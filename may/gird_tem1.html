@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        :root {
+            --dark: #765451;
+            --white: #ffffff;
+            --background: #fffcfa;
+            --primary: #f6866a;
+            --light: #fff0e6;
+        }
+
+        * {
+            font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+                Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+                'Noto Sans KR', 'Malgun Gothic', sans-serif;
+        }
+
+        body {
+            height: 100%;
+            padding: 10%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content1 content2"
+                "sidebar footer footer";
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 22px;
+            border: solid 1px var(--dark);
+            border-radius: 20px;
+            gap: 0.5rem;
+            background: #fff;
+            box-shadow: 0px 4px 12px 0px #51459f14;
+        }
+
+        .item {
+            padding: 10px;
+            /* 콘텐츠에 따라 조절해주세요 */
+            border: solid 1px var(--dark);
+            border-radius: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0px 4px 15px 0px #51459f14;
+            /* word-break: break-all; */
+            word-break: keep-all;
+        }
+
+        .even {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* layout */
+
+        .container .header {
+            grid-area: header;
+        }
+
+
+        .container .side {
+            grid-area: sidebar;
+        }
+
+        .container .cont1 {
+            grid-area: content1;
+        }
+
+        .container .cont2 {
+            grid-area: content2;
+
+        }
+
+        .container .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item header even">Header</div>
+        <div class="item side">Sidebar</div>
+        <div class="item cont1">Content</div>
+        <div class="item cont2">Content</div>
+        <div class="item footer even">Footer</div>
+    </div>
+</body>
+
+</html>
