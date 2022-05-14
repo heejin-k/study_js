@@ -31,11 +31,8 @@
 
         .container {
             display: grid;
-            grid-template-areas:
-                "header header header"
-                "sidebar content1 content2"
-                "sidebar footer footer";
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 5fr 1fr;
             padding: 22px;
             border: solid 1px var(--dark);
             border-radius: 20px;
@@ -45,7 +42,7 @@
         }
 
         .item {
-            padding: 10px;
+            padding: 20px;
             /* 콘텐츠에 따라 조절해주세요 */
             border: solid 1px var(--dark);
             border-radius: 20px;
@@ -54,6 +51,7 @@
             box-shadow: 0px 4px 15px 0px #51459f14;
             /* word-break: break-all; */
             word-break: keep-all;
+            text-align: center;
         }
 
         .even {
@@ -62,38 +60,35 @@
         }
 
         /* layout */
-
-        .container .header {
-            grid-area: header;
+        .header {
+            grid-area: 1/1/2/4;
         }
 
-
-        .container .side {
-            grid-area: sidebar;
+        .l-side {
+            grid-area: 2/1/3/2;
         }
 
-        .container .cont1 {
-            grid-area: content1;
+        .main-cont {
+            grid-area: 2/2/3/3;
         }
 
-        .container .cont2 {
-            grid-area: content2;
-
+        .r-side {
+            grid-area: 2/3/3/4;
         }
 
-        .container .footer {
-            grid-area: footer;
+        .footer {
+            grid-area: 3/1/4/4;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="item header even">Header</div>
-        <div class="item side">Sidebar</div>
-        <div class="item cont1">Content</div>
-        <div class="item cont2">Content</div>
-        <div class="item footer even">Footer</div>
+        <div class="item header ">Header</div>
+        <div class="item l-side even">Left Sidebar</div>
+        <div class="item main-cont even">Main Content</div>
+        <div class="item r-side even">Right Sider</div>
+        <div class="item footer ">Footer</div>
     </div>
 </body>
 
