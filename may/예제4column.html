@@ -31,12 +31,8 @@
 
         .container {
             display: grid;
-            grid-template-areas:
-                "header header header"
-                "sidebar content1 content2"
-                "sidebar footer footer";
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 3fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             padding: 22px;
             border: solid 1px var(--dark);
             border-radius: 20px;
@@ -46,54 +42,31 @@
         }
 
         .item {
-            padding: 20px;
+            padding: 50px;
             /* 콘텐츠에 따라 조절해주세요 */
             border: solid 1px var(--dark);
             border-radius: 20px;
-            background-color: var(--primary);
-            color: var(--white);
+            background-color: var(--light);
+            color: var(--dark);
             box-shadow: 0px 4px 15px 0px #51459f14;
             /* word-break: break-all; */
             word-break: keep-all;
-            text-align: center;
         }
 
         .even {
-            background-color: var(--light);
-            color: var(--dark);
-        }
-
-        /* layout */
-
-        .container .header {
-            grid-area: header;
-        }
-
-        .container .sidebar {
-            grid-area: sidebar;
-        }
-
-        .container .content1 {
-            grid-area: content1;
-        }
-
-        .container .content2 {
-            grid-area: content2;
-        }
-
-        .container .footer {
-            grid-area: footer;
+            background-color: var(--primary);
+            color: var(--white);
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="item header">Header</div>
-        <div class="item sidebar even">Sidebar</div>
-        <div class="item content1 even">Content</div>
-        <div class="item content2 even">Content</div>
-        <div class="item footer">Footer</div>
+        <div class="item even">grid1</div>
+        <div class="item">grid2</div>
+        <div class="item">grid3</div>
     </div>
 </body>
 
