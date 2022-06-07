@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script>
+        const root = document.querySelector("#root");
+        const container = document.createElement('div');
+        container.classList.add("container")
+        root.appendChild(container);
+
+
+        const h1 = document.createElement('div');
+        h1.classList.add("ir")
+        container.appendChild(h1);
+        h1.innerText = "테스트 페이지";
+
+        const section = document.createElement('section');
+        container.appendChild(section);
+
+        const section_title = document.createElement('h2');
+        section_title.classList.add("section-title")
+        section.appendChild(section_title);
+        section_title.innerText = "섹션제목";
+
+        const section_img = document.createElement('img');
+        section_img.classList.add("section-img")
+        section_img.src = "img.jpg";
+        section_img.alt = "섹션이미지";
+        section.appendChild(section_img);
+
+        const section_contents = document.createElement('p');
+        section_contents.classList.add("section-contents")
+        section.appendChild(section_contents);
+        section_contents.innerText = "내용";
+
+    </script>
+</body>
+
+</html>
